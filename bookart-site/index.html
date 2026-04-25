@@ -178,7 +178,7 @@ nav{
 .stat-l{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--mist)}
 
 /* ── HOW IT WORKS ── */
-.how{max-width:1300px;margin:0 auto;padding:7rem 5%}
+.how{max-width:1300px;margin:0 auto;padding:3rem 5%}
 .section-eyebrow{
   font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;
   color:var(--rust);margin-bottom:1rem;display:block;
@@ -256,6 +256,10 @@ nav{
   transition:background .2s;
 }
 .book-btn:hover{background:var(--rust)}
+.start-here{background:#fff;padding:4rem 5%;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.start-here-inner{max-width:1300px;margin:0 auto}
+.start-here-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);margin-top:2rem}
+.start-here-tag{font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:#fff;background:var(--rust);padding:.25rem .75rem;display:inline-block;margin-bottom:.6rem}
 .collection-cta{text-align:center;margin-top:3rem}
 /* ── VIDEO SECTION ── */
 .video-section{
@@ -547,6 +551,34 @@ footer p{font-size:.75rem;color:rgba(255,255,255,.3)}
   </div>
 </section>
 
+<!-- START HERE -->
+<section class="start-here">
+  <div class="start-here-inner">
+    <span class="section-eyebrow reveal">Start here</span>
+    <h2 class="section-title reveal">Your first BookArt — from $9.90</h2>
+    <p class="section-sub reveal">The easiest way to try BookArt. No commitment. Just fold.</p>
+    <div class="start-here-grid reveal">
+
+      <!-- DISEÑO 1 — reemplaza con tu diseño de entrada -->
+      <div class="book-card">
+        <div class="book-img">
+          <img src="images/little_ghost.jpg" alt="Little Ghost BookArt">
+        </div>
+        <div class="book-info">
+          <span class="start-here-tag">Best entry point</span>
+          <h3 class="book-name">Little Ghost</h3>
+          <p class="book-desc">A classic, friendly ghost silhouette that floats up from the pages fold by fold.</p>
+          <div class="book-footer">
+            <span class="book-price">From $12.90</span>
+            <a href="https://www.amazon.com/dp/B0GYHZ6DG5" target="_blank" class="book-btn" onclick="gtag('event', 'click_amazon', {item: 'Little Ghost - Paperback'})">Amazon ↗</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <!-- COLLECTION PREVIEW -->
 <section class="collection">
   <div class="collection-header">
@@ -616,7 +648,7 @@ footer p{font-size:.75rem;color:rgba(255,255,255,.3)}
     <a href="collection.html" class="btn-primary">See all 10+ designs →</a>
   </div>
 </section>
-
+  
 <!-- VIDEO SECTION -->
 <section class="video-section">
   <span class="section-eyebrow reveal">Watch it happen</span>
