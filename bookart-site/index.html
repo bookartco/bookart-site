@@ -266,7 +266,8 @@ nav{
 .carousel-track{display:flex;transition:transform .4s ease}
 .carousel-slide{min-width:100%;flex-shrink:0;width:100%}
 @media(min-width:769px){.carousel-slide{min-width:50%}}
-.review-img{width:100%;border:1px solid var(--border);display:block;border-radius:4px;height:200px;object-fit:contain;background:#fff}
+.review-img{width:100%;border:1px solid var(--border);display:block;border-radius:4px;height:auto;object-fit:contain;background:#fff}
+@media(min-width:769px){.review-img{max-width:800px;margin:0 auto}}
 .carousel-controls{display:flex;align-items:center;justify-content:center;gap:1rem;margin-top:1.25rem}
 .carousel-btn{background:none;border:1px solid var(--border);width:36px;height:36px;cursor:pointer;font-size:1rem;display:flex;align-items:center;justify-content:center;transition:all .2s;font-family:var(--sans)}
 .carousel-btn:hover{background:var(--ink);color:var(--cream);border-color:var(--ink)}
@@ -600,13 +601,43 @@ footer p{font-size:.75rem;color:rgba(255,255,255,.3)}
     <h2 class="section-title reveal">Real reviews from Amazon</h2>
     <div class="carousel reveal" id="reviewCarousel">
       <div class="carousel-track" id="carouselTrack">
-        <div class="carousel-slide"><img src="images/review-1.jpg" alt="Amazon review BookArt" class="review-img"></div>
-        <div class="carousel-slide"><img src="images/review-2.jpg" alt="Amazon review BookArt" class="review-img"></div>
-        <div class="carousel-slide"><img src="images/review-3.jpg" alt="Amazon review BookArt" class="review-img"></div>
-        <div class="carousel-slide"><img src="images/review-4.jpg" alt="Amazon review BookArt" class="review-img"></div>
+        <div class="carousel-slide">
+          <picture>
+            <source media="(min-width:769px)" srcset="images/review-1-desktop.jpg">
+            <img src="images/review-1.jpg" alt="Amazon review BookArt" class="review-img">
+          </picture>
+        </div>
+        <div class="carousel-slide">
+          <picture>
+            <source media="(min-width:769px)" srcset="images/review-2-desktop.jpg">
+            <img src="images/review-2.jpg" alt="Amazon review BookArt" class="review-img">
+          </picture>
+        </div>
+        <div class="carousel-slide">
+          <picture>
+            <source media="(min-width:769px)" srcset="images/review-3-desktop.jpg">
+            <img src="images/review-3.jpg" alt="Amazon review BookArt" class="review-img">
+          </picture>
+        </div>
+        <div class="carousel-slide">
+          <picture>
+            <source media="(min-width:769px)" srcset="images/review-4-desktop.jpg">
+            <img src="images/review-4.jpg" alt="Amazon review BookArt" class="review-img">
+          </picture>
+        </div>
         <!-- ESPACIO PARA 2 MÁS — descomenta cuando tengas las imágenes
-        <div class="carousel-slide"><img src="images/review-5.jpg" alt="Amazon review BookArt" class="review-img"></div>
-        <div class="carousel-slide"><img src="images/review-6.jpg" alt="Amazon review BookArt" class="review-img"></div>
+        <div class="carousel-slide">
+          <picture>
+            <source media="(min-width:769px)" srcset="images/review-5-desktop.jpg">
+            <img src="images/review-5.jpg" alt="Amazon review BookArt" class="review-img">
+          </picture>
+        </div>
+        <div class="carousel-slide">
+          <picture>
+            <source media="(min-width:769px)" srcset="images/review-6-desktop.jpg">
+            <img src="images/review-6.jpg" alt="Amazon review BookArt" class="review-img">
+          </picture>
+        </div>
         -->
       </div>
       <div class="carousel-controls">
