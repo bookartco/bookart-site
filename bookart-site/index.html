@@ -788,7 +788,6 @@ function goToSlide(n){
   track.style.transform = `translateX(-${current * slideWidth}%)`;
   document.querySelectorAll('.carousel-dot').forEach((d,i) => d.classList.toggle('active', i === current));
 }
-}
 
 function moveCarousel(dir){
   goToSlide((current + dir + totalSlides) % totalSlides);
