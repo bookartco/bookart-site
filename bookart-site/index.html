@@ -85,6 +85,7 @@ nav{
 .mobile-menu{display:none}
 
 /* ── HERO ── */
+.hero-section{background:var(--ink)}
 .hero{
   min-height:100vh;
   display:grid;grid-template-columns:1fr 1fr;
@@ -94,16 +95,17 @@ nav{
 }
 .hero-tag{
   display:inline-block;font-size:0.72rem;letter-spacing:0.14em;text-transform:uppercase;
-  color:var(--rust);margin-bottom:1.5rem;
-  border-bottom:1px solid var(--rust);padding-bottom:4px;
+  color:var(--sand);margin-bottom:1.5rem;
+  border-bottom:1px solid var(--sand);padding-bottom:4px;
 }
 .hero-title{
   font-family:var(--serif);font-size:clamp(3rem,5.5vw,5rem);
   line-height:1.05;letter-spacing:-0.01em;margin-bottom:1.5rem;
+  color:var(--cream);
 }
-.hero-title em{font-style:italic;color:var(--rust)}
+.hero-title em{font-style:italic;color:var(--teal)}
 .hero-sub{
-  font-size:1rem;color:var(--mist);line-height:1.8;
+  font-size:1rem;color:rgba(240,235,227,0.7);line-height:1.8;
   margin-bottom:2.5rem;font-weight:300;max-width:440px;
 }
 .hero-actions{display:flex;gap:1rem;align-items:center;flex-wrap:wrap}
@@ -470,7 +472,7 @@ footer p{font-size:.75rem;color:rgba(255,255,255,.3)}
 </div>
 
 <!-- HERO -->
-<section>
+<section class="hero-section">
   <div class="hero">
     <div class="hero-text">
       <span class="hero-tag reveal">Pre-marked · No experience needed</span>
