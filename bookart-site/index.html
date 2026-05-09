@@ -32,22 +32,23 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-  
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+
 <style>
   
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 
 :root{
-  --ink:#16120E;
-  --cream:#F7F3ED;
-  --warm:#EDE7DC;
-  --rust:#B84C2A;
-  --rust-light:#F0E4DC;
-  --mist:#8A8078;
-  --border:rgba(22,18,14,0.1);
-  --serif:'Cormorant Garamond',Georgia,serif;
-  --sans:'Jost',system-ui,sans-serif;
+  --ink:#141414;
+  --cream:#F0EBE3;
+  --warm:#E8E0D5;
+  --teal:#0E7C86;
+  --teal-light:#E0F2F3;
+  --sand:#C9B99A;
+  --mist:#141414cc;
+  --border:rgba(20,20,20,0.1);
+  --serif:'DM Sans',system-ui,sans-serif;
+  --sans:'DM Sans',system-ui,sans-serif;
 }
 
 html{scroll-behavior:smooth}
@@ -73,7 +74,7 @@ nav{
 }
 .nav-links a:hover{color:var(--ink)}
 .nav-btn{
-  background:var(--ink)!important;color:var(--cream)!important;
+  background:var(--teal)!important;color:#fff!important;
   padding:.55rem 1.4rem!important;border-radius:2px!important;
   font-weight:500!important;font-size:0.8rem!important;letter-spacing:0.06em!important;
   text-transform:uppercase!important;transition:background .2s!important;
@@ -108,7 +109,7 @@ nav{
 .hero-actions{display:flex;gap:1rem;align-items:center;flex-wrap:wrap}
 .btn-primary{
   display:inline-flex;align-items:center;gap:.5rem;
-  background:var(--rust);color:#fff;
+  background:var(--teal);color:#fff;
   padding:.85rem 2rem;border-radius:2px;
   font-weight:500;font-size:.85rem;letter-spacing:.06em;text-transform:uppercase;
   text-decoration:none;transition:background .2s,transform .15s;
@@ -181,7 +182,7 @@ nav{
 .how{max-width:1300px;margin:0 auto;padding:3rem 5%}
 .section-eyebrow{
   font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;
-  color:var(--rust);margin-bottom:1rem;display:block;
+  color:var(--teal);margin-bottom:1rem;display:block;
 }
 .section-title{
   font-family:var(--serif);font-size:clamp(2.2rem,4vw,3.5rem);
@@ -443,7 +444,9 @@ footer p{font-size:.75rem;color:rgba(255,255,255,.3)}
 
 <!-- NAV -->
 <nav>
-  <a href="/" class="logo">BookArt</a>
+  <a href="/" class="logo">
+    <img src="logo-wordmark.png" alt="BookArt" style="height:32px;width:auto;display:block;">
+  </a>
   <ul class="nav-links">
     <li><a href="#how">How it works</a></li>
     <li><a href="collection.html">Collection</a></li>
@@ -815,8 +818,10 @@ footer p{font-size:.75rem;color:rgba(255,255,255,.3)}
 
 <!-- FOOTER -->
 <footer>
-  <a href="/" class="footer-logo">BookArt</a>
-  <p>© 2025 BookArt by Diego E. Valencia S.</p>
+  <a href="/" class="footer-logo">
+    <img src="logo-wordmark.png" alt="BookArt" style="height:28px;width:auto;display:block;filter:brightness(0) invert(1);">
+  </a>
+  <p>© 2026 BookArt by Diego E. Valencia S.</p>
   <div class="footer-links">
     <a href="https://instagram.com/bookart_co" target="_blank">Instagram</a>
     <a href="https://tiktok.com/@bookartco" target="_blank">TikTok</a>
