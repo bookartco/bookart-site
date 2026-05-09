@@ -150,7 +150,7 @@ nav{
 .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5px;background:var(--border)}
 .step{background:var(--cream);padding:2.5rem 2rem;transition:background .25s}
 .step:hover{background:var(--white)}
-.step-n{font-size:4rem;font-weight:300;color:var(--teal-light);line-height:1;margin-bottom:1.25rem;display:block}
+.step-n{font-size:4rem;font-weight:300;color:var(--teal);line-height:1;margin-bottom:1.25rem;display:block;opacity:.2}
 .step-title{font-size:1rem;font-weight:500;margin-bottom:.5rem}
 .step-desc{font-size:.88rem;color:var(--mist);line-height:1.7}
 
