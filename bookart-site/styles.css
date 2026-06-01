@@ -314,6 +314,21 @@ footer p{font-size:.75rem;color:rgba(255,255,255,.3)}
 .related-title{font-size:1.2rem;font-weight:500;line-height:1.2;margin-bottom:.5rem}
 .related-read{font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--mist)}
 
+/* ── MOBILE STICKY BUTTON ── */
+.mobile-shop-btn{display:none}
+@media(max-width:960px){
+  .mobile-shop-btn{
+    display:flex;align-items:center;justify-content:center;gap:.5rem;
+    position:fixed;bottom:0;left:0;right:0;z-index:200;
+    background:var(--teal);color:#fff;
+    padding:1rem 2rem;
+    font-size:.85rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;
+    text-decoration:none;border-top:2px solid var(--teal-dark);
+    box-shadow:0 -4px 20px rgba(0,0,0,0.15);
+  }
+  body{padding-bottom:56px}
+}
+
 /* ── RESPONSIVE ── */
 @media(max-width:960px){
   .nav-links{display:none}
