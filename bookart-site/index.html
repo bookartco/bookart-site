@@ -98,9 +98,9 @@ fbq('track', 'PageView');
         Every page has printed guides that show you exactly where to fold. No measuring. No cutting. No experience needed. Just follow the marks and watch something beautiful emerge.
       </p>
       <div class="hero-actions reveal">
-        <a href="https://www.amazon.com/stores/Diego-E.-Valencia-S/author/B0BN4KYQNH" target="_blank" class="mobile-shop-btn" onclick="gtag('event', 'click_amazon', {item: 'Mobile Sticky Button'})">
-          Shop on Amazon ↗
-        </a>
+        <a href="https://www.amazon.com/stores/Diego-E.-Valencia-S/author/B0BN4KYQNH" target="_blank" class="btn-primary" onclick="gtag('event', 'click_amazon', {item: 'Hero CTA'});fbq('trackCustom', 'click_amazon_product', {item: 'Hero CTA'})">
+  Shop on Amazon ↗
+</a>
       </div>
     </div>
 
@@ -490,8 +490,8 @@ reveals.forEach(r => observer.observe(r));
 function openMenu(){ document.getElementById('mobileMenu').classList.add('open') }
 function closeMenu(){ document.getElementById('mobileMenu').classList.remove('open') }
 </script>
-
-<a href="https://www.amazon.com/stores/Diego-E.-Valencia-S/author/B0BN4KYQNH" target="_blank" class="mobile-shop-btn" onclick="gtag('event', 'click_amazon', {item: 'Mobile Sticky Button'})">
+  
+<a href="https://www.amazon.com/stores/Diego-E.-Valencia-S/author/B0BN4KYQNH" target="_blank" class="mobile-shop-btn" onclick="gtag('event', 'click_amazon', {item: 'Mobile Sticky Button'});fbq('trackCustom', 'click_amazon_sticky')">
   Shop on Amazon ↗
 </a>
   
