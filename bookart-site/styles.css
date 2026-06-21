@@ -134,6 +134,7 @@ nav{
 /* ── TICKER ── */
 .ticker-wrap{border-top:1px solid rgba(255,255,255,0.06);border-bottom:1px solid var(--border);background:var(--ink);overflow:hidden;padding:.8rem 0}
 .ticker{display:flex;gap:3rem;animation:ticker 28s linear infinite;white-space:nowrap}
+@media(max-width:580px){.ticker{animation-duration:40s}}
 .ticker-item{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--cream);opacity:.7;flex-shrink:0}
 .ticker-item span{color:var(--teal);margin-right:3rem}
 @keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
@@ -357,12 +358,20 @@ footer p{font-size:.75rem;color:rgba(255,255,255,.3)}
   .related-grid{grid-template-columns:1fr}
   .article-header,.article-body{padding-left:1.5rem;padding-right:1.5rem}
   .start-here-grid{grid-template-columns:repeat(2,1fr);max-width:100%}
+  .how,.collection,.start-here,.video-section,.blog-section,.quote-section,.reviews,.footer-cta{padding-top:3rem;padding-bottom:3rem}
+  .section-sub{margin-bottom:2rem}
 }
 @media(max-width:580px){
   .books-grid{grid-template-columns:repeat(2,1fr)}
   .collection-grid{grid-template-columns:repeat(2,1fr)}
-  .hero-title{font-size:2.6rem}
+  .hero-title{font-size:2.2rem}
+  .hero-sub{margin-bottom:1.5rem}
+  .hero{padding:6rem 5% 2rem}
+  .stat{padding:1.5rem 1rem}
+  .stat-n{font-size:2.2rem}
   .stats{grid-template-columns:repeat(2,1fr)}
+  .video-grid{gap:1rem}
+  .video-section{padding:2.5rem 5%}
   .book-info{padding:1rem}
   .book-name{font-size:1.1rem}
   .book-desc{display:none}
