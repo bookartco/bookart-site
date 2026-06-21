@@ -359,8 +359,15 @@ footer p{font-size:.75rem;color:rgba(255,255,255,.3)}
   .start-here-grid{grid-template-columns:1fr;max-width:100%}
 }
 @media(max-width:580px){
-  .books-grid{grid-template-columns:1fr}
-  .collection-grid{grid-template-columns:1fr}
+  .books-grid{grid-template-columns:repeat(2,1fr)}
+  .collection-grid{grid-template-columns:repeat(2,1fr)}
   .hero-title{font-size:2.6rem}
   .stats{grid-template-columns:repeat(2,1fr)}
+  .book-info{padding:1rem}
+  .book-name{font-size:1.1rem}
+  .book-desc{display:none}
+  .book-occasion{display:none}
+  .book-tag{font-size:.6rem;padding:.15rem .4rem}
+  .book-price{font-size:.85rem}
+  .book-btn{font-size:.65rem;padding:.4rem .6rem}
 }
