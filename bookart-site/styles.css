@@ -261,7 +261,7 @@ cite{font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;color:var(--mi
 .creator-success p{font-size:.9rem;color:rgba(240,235,227,0.6)}
 @media(max-width:960px){
   .creator-inner{grid-template-columns:1fr;gap:3rem}
-  .creator-video{aspect-ratio:16/9}
+  .creator-video{aspect-ratio:9/16;max-height:500px}
 }
 
 /* ── FOOTER CTA ── */
