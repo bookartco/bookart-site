@@ -475,6 +475,80 @@ fbq('track', 'PageView');
   </div>
 </section>
 
+<!-- CREATOR SECTION -->
+<section class="creator">
+  <div class="creator-inner">
+
+    <!-- LEFT: Info + Video -->
+    <div>
+      <span class="creator-tag reveal">BookArt Creator Program</span>
+      <h2 class="creator-title reveal">Become a<br>BookArt Creator</h2>
+      <p class="creator-sub reveal">Get a free book. Fold it. Share it. That's it.</p>
+      <ul class="creator-steps reveal">
+        <li>We send you a free BookArt</li>
+        <li>You fold it, film it, and share it on your account mentioning @bookart_co</li>
+        <li>No rules, just your authentic experience</li>
+      </ul>
+      <div class="creator-video reveal">
+        <iframe src="https://www.instagram.com/reel/DT72zNSjXRY/embed" scrolling="no" allowtransparency="true" allowfullscreen="true"></iframe>
+      </div>
+    </div>
+
+    <!-- RIGHT: Form -->
+    <div class="reveal">
+      <div class="creator-form" id="creatorForm">
+        <p class="creator-form-title">Apply to the program</p>
+
+        <div class="form-field">
+          <label>Name *</label>
+          <input type="text" id="nombre" placeholder="Your name" required>
+        </div>
+
+        <div class="form-field">
+          <label>Instagram / TikTok handle *</label>
+          <input type="text" id="handle" placeholder="@yourhandle" required>
+        </div>
+
+        <div class="form-field">
+          <label>Country *</label>
+          <input type="text" id="pais" placeholder="United States, Colombia..." required>
+        </div>
+
+        <div class="form-field">
+          <label>Why do you want to be a BookArt Creator? (optional)</label>
+          <textarea id="porque" placeholder="Tell us a bit about yourself and your content..."></textarea>
+        </div>
+
+        <div class="form-field">
+          <label>Which design would you like to receive? (optional)</label>
+          <select id="diseno">
+            <option value="">Choose a design...</option>
+            <option>Wavy Heart</option>
+            <option>Butterfly</option>
+            <option>Black Skull</option>
+            <option>Paw Print</option>
+            <option>I Love You</option>
+            <option>Little Ghost</option>
+            <option>Puppy Bone</option>
+            <option>Black Heart</option>
+            <option>Red Heart</option>
+          </select>
+        </div>
+
+        <button class="creator-submit" onclick="submitCreator()">Apply now →</button>
+
+        <p class="creator-disclaimer">We'll reach out within 7 days if your profile is a good fit. Due to high demand, we can't accept everyone.</p>
+      </div>
+
+      <div class="creator-success" id="creatorSuccess">
+        <h3>Application received ✦</h3>
+        <p>Thanks for applying to the BookArt Creator Program. We'll review your profile and reach out within 7 days if it's a good fit.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+  
 <!-- FOOTER CTA -->
 <div class="footer-cta">
   <span class="section-eyebrow">Ready to start?</span>
@@ -538,6 +612,38 @@ const observer = new IntersectionObserver(entries => {
 }, {threshold: 0.1});
 reveals.forEach(r => observer.observe(r));
 
+// Creator Form
+async function submitCreator() {
+  const nombre = document.getElementById('nombre').value.trim();
+  const handle = document.getElementById('handle').value.trim();
+  const pais = document.getElementById('pais').value.trim();
+  if(!nombre || !handle || !pais){
+    alert('Please fill in the required fields.');
+    return;
+  }
+  const data = {
+    nombre,
+    handle,
+    pais,
+    porque: document.getElementById('porque').value.trim(),
+    diseno: document.getElementById('diseno').value
+  };
+  try {
+    await fetch('https://script.google.com/macros/s/AKfycbxN2vsl4kIrH3Q7Y51Z087gGvhy1gUYzCeW2dC-ZYRDCZIDaoja1m3vtLxD5XpkwdIR/exec', {
+      method:'POST',
+      mode:'no-cors',
+      headers:{'Content-Type':'application/json'},
+      body: JSON.stringify(data)
+    });
+    document.getElementById('creatorForm').style.display = 'none';
+    document.getElementById('creatorSuccess').style.display = 'block';
+    gtag('event', 'creator_apply', {nombre, handle, pais});
+    fbq('trackCustom', 'CreatorApply');
+  } catch(err) {
+    alert('Something went wrong. Please try again.');
+  }
+}
+  
 // Mobile menu
 function openMenu(){ document.getElementById('mobileMenu').classList.add('open') }
 function closeMenu(){ document.getElementById('mobileMenu').classList.remove('open') }
