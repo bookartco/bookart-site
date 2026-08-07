@@ -164,12 +164,23 @@ nav{
 
 /* ── HOW IT WORKS ── */
 .how{max-width:1300px;margin:0 auto;padding:3rem 5%}
-.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5px;background:var(--border)}
-.step{background:var(--cream);padding:2.5rem 2rem;transition:background .25s}
-.step:hover{background:var(--white)}
-.step-n{font-size:4rem;font-weight:300;color:var(--teal);line-height:1;margin-bottom:1.25rem;display:block;opacity:.2}
-.step-title{font-size:1rem;font-weight:500;margin-bottom:.5rem}
-.step-desc{font-size:.88rem;color:var(--mist);line-height:1.7}
+.steps-carousel{position:relative;margin-top:2rem;overflow:hidden}
+.steps-track{display:flex;transition:transform .4s ease}
+.step-slide{min-width:100%;flex-shrink:0;display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:center}
+.step-img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block}
+.step-content{display:flex;flex-direction:column}
+.step-n{font-size:3rem;font-weight:300;color:var(--teal);line-height:1;margin-bottom:1rem;display:block;opacity:.25}
+.step-title{font-size:1.6rem;font-weight:500;margin-bottom:.75rem;line-height:1.2}
+.step-desc{font-size:.9rem;color:var(--mist);line-height:1.7}
+.steps-controls{display:flex;align-items:center;justify-content:center;gap:1rem;margin-top:2rem}
+.steps-dots{display:flex;gap:.75rem}
+.steps-dot{width:8px;height:8px;border-radius:50%;background:var(--border);border:none;cursor:pointer;padding:0;transition:background .2s}
+.steps-dot.active{background:var(--teal)}
+@media(max-width:960px){
+  .step-slide{grid-template-columns:1fr;gap:1.5rem}
+  .step-img{aspect-ratio:16/9}
+  .step-title{font-size:1.3rem}
+}
 
 /* ── BOOK CARDS ── */
 .book-card{background:var(--white);transition:background .25s;overflow:hidden;display:flex;flex-direction:column;border:1px solid #E0D8CC}
