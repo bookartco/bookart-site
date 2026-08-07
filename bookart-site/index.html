@@ -646,12 +646,13 @@ const heroSlides = document.getElementById('heroSlides');
 const heroDots = document.getElementById('heroDots');
 const heroTotal = heroSlides ? heroSlides.children.length : 0;
 let heroCurrent = 0;
+let heroTimer;
 
 if(heroTotal > 0){
   for(let i = 0; i < heroTotal; i++){
     const dot = document.createElement('button');
     dot.className = 'hero-dot' + (i === 0 ? ' active' : '');
-    dot.onclick = () => goToHero(i);
+    dot.onclick = () => { goToHero(i); resetHeroTimer(); };
     heroDots.appendChild(dot);
   }
 }
@@ -666,8 +667,28 @@ function moveHero(dir){
   goToHero((heroCurrent + dir + heroTotal) % heroTotal);
 }
 
-// Auto-advance cada 6 segundos
-setInterval(() => moveHero(1), 6000);
+function resetHeroTimer(){
+  clearInterval(heroTimer);
+  heroTimer = setInterval(() => moveHero(1), 10000);
+}
+
+// Auto-advance cada 10 segundos
+heroTimer = setInterval(() => moveHero(1), 10000);
+
+// Swipe en mobile
+let heroTouchStart = 0;
+if(heroSlides){
+  heroSlides.addEventListener('touchstart', e => {
+    heroTouchStart = e.touches[0].clientX;
+  }, {passive:true});
+  heroSlides.addEventListener('touchend', e => {
+    const diff = heroTouchStart - e.changedTouches[0].clientX;
+    if(Math.abs(diff) > 50){
+      moveHero(diff > 0 ? 1 : -1);
+      resetHeroTimer();
+    }
+  }, {passive:true});
+}
   
 // Creator Form
 async function submitCreator() {
