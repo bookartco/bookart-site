@@ -224,24 +224,54 @@ fbq('track', 'PageView');
 
 <!-- HOW IT WORKS -->
 <section id="how" class="how">
-  <span class="section-eyebrow reveal">The process</span>
-  <h2 class="section-title reveal">Three steps.<br>One sculpture.</h2>
+  <h2 class="section-title reveal">Three steps. One sculpture.</h2>
   <p class="section-sub reveal">No tools. No measuring. Open the book and start folding at your own pace.</p>
-  <div class="steps reveal">
-    <div class="step">
-      <span class="step-n">01</span>
-      <div class="step-title">Open your BookArt</div>
-      <p class="step-desc">Every page has dotted lines that tell you exactly where to fold. No guesswork, no calculations — just open and start.</p>
+
+  <div class="steps-carousel reveal">
+    <div class="steps-track" id="stepsTrack">
+
+      <div class="step-slide">
+        <img src="images/process-1.jpg" alt="Open the BookArt book with pre-marked fold guides" class="step-img">
+        <div class="step-content">
+          <span class="step-n">01</span>
+          <h3 class="step-title">Open the book</h3>
+          <p class="step-desc">Every page comes pre-marked with printed fold guides. No measuring, no cutting.</p>
+        </div>
+      </div>
+
+      <div class="step-slide">
+        <img src="images/process-2.jpg" alt="Folding book pages following printed marks" class="step-img">
+        <div class="step-content">
+          <span class="step-n">02</span>
+          <h3 class="step-title">Fold, page by page</h3>
+          <p class="step-desc">Follow the printed marks and fold gently. That's the whole technique.</p>
+        </div>
+      </div>
+
+      <div class="step-slide">
+        <img src="images/process-3.jpg" alt="3D paper sculpture taking shape fold by fold" class="step-img">
+        <div class="step-content">
+          <span class="step-n">03</span>
+          <h3 class="step-title">Watch it take shape</h3>
+          <p class="step-desc">The 3D sculpture appears slowly, fold after fold.</p>
+        </div>
+      </div>
+
+      <div class="step-slide">
+        <img src="images/process-4.jpg" alt="Finished BookArt 3D paper sculpture on display" class="step-img">
+        <div class="step-content">
+          <span class="step-n">04</span>
+          <h3 class="step-title">Enjoy your creation</h3>
+          <p class="step-desc">Display it, gift it, or simply admire what your hands made.</p>
+        </div>
+      </div>
+
     </div>
-    <div class="step">
-      <span class="step-n">02</span>
-      <div class="step-title">Fold page by page</div>
-      <p class="step-desc">Follow the marks. Fold the corners gently. Repeat. The figure reveals itself over 2–3 hours of calm, focused work.</p>
-    </div>
-    <div class="step">
-      <span class="step-n">03</span>
-      <div class="step-title">Keep it or gift it</div>
-      <p class="step-desc">Display your 3D sculpture on a shelf — or give it as the most unique gift someone will receive this year.</p>
+
+    <div class="steps-controls">
+      <button class="carousel-btn" onclick="moveSteps(-1)">←</button>
+      <div class="steps-dots" id="stepsDots"></div>
+      <button class="carousel-btn" onclick="moveSteps(1)">→</button>
     </div>
   </div>
 </section>
