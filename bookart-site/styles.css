@@ -108,13 +108,21 @@ nav{
   .hero-slide-img{aspect-ratio:1/1}
 }
 @media(max-width:580px){
-  .hero-slide{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:auto auto auto;padding:5rem 4% 2rem;gap:.75rem;align-items:start}
-  .hero-slide .hero-text{grid-column:1;grid-row:1;display:grid;grid-template-rows:auto auto auto}
-  .hero-slide .hero-title{grid-row:1;font-size:1.5rem;margin-bottom:0}
-  .hero-slide .hero-sub{grid-column:1/-1;order:3;font-size:.85rem;margin-bottom:.5rem;color:rgba(240,235,227,0.7);text-align:center;margin-top:.5rem}
-  .hero-slide .hero-actions{grid-column:1/-1;order:4;display:flex;justify-content:center}
-  .hero-slide-img{grid-column:2;grid-row:1;aspect-ratio:3/4}
+  .books-grid{grid-template-columns:repeat(2,1fr)}
+  .collection-grid{grid-template-columns:repeat(2,1fr)}
+  .hero-title{font-size:1.6rem;margin-bottom:.5rem}
+  .hero-sub{font-size:.82rem;margin-bottom:1rem}
+  .hero-actions{justify-content:flex-start}
   .hero-tag{display:none}
+  .hero-slide{padding:5rem 4% 2rem;gap:1rem}
+  .hero-slide .hero-text{display:flex;flex-direction:column}
+  .hero-slide-img{aspect-ratio:3/4}
+  .stat{padding:1.5rem 1rem}
+  .stat-n{font-size:2.2rem}
+  .ticker{animation-duration:40s}
+  .video-grid{gap:1rem}
+  .video-section{padding:2.5rem 5%}
+  .start-here-grid{grid-template-columns:repeat(2,1fr)}
 }
 /* ── HERO ── */
 .hero-section{background:var(--ink);position:relative}
