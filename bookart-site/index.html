@@ -692,6 +692,43 @@ if(heroSlides){
     }
   }, {passive:true});
 }
+
+// Steps Carousel
+const stepsTrack = document.getElementById('stepsTrack');
+const stepsDots = document.getElementById('stepsDots');
+const stepsTotal = stepsTrack ? stepsTrack.children.length : 0;
+let stepsCurrent = 0;
+
+if(stepsTotal > 0){
+  for(let i = 0; i < stepsTotal; i++){
+    const dot = document.createElement('button');
+    dot.className = 'steps-dot' + (i === 0 ? ' active' : '');
+    dot.onclick = () => goToStep(i);
+    stepsDots.appendChild(dot);
+  }
+}
+
+function goToStep(n){
+  stepsCurrent = n;
+  stepsTrack.style.transform = `translateX(-${n * 100}%)`;
+  document.querySelectorAll('.steps-dot').forEach((d,i) => d.classList.toggle('active', i === n));
+}
+
+function moveSteps(dir){
+  goToStep((stepsCurrent + dir + stepsTotal) % stepsTotal);
+}
+
+// Swipe en mobile
+let stepsTouchStart = 0;
+if(stepsTrack){
+  stepsTrack.addEventListener('touchstart', e => {
+    stepsTouchStart = e.touches[0].clientX;
+  }, {passive:true});
+  stepsTrack.addEventListener('touchend', e => {
+    const diff = stepsTouchStart - e.changedTouches[0].clientX;
+    if(Math.abs(diff) > 50) moveSteps(diff > 0 ? 1 : -1);
+  }, {passive:true});
+}
   
 // Creator Form
 async function submitCreator() {
