@@ -96,7 +96,8 @@ nav{
 /* ── HERO BANNER ── */
 .hero-section{background:var(--ink);position:relative;overflow:hidden}
 .hero-slides{display:flex;transition:transform .6s ease;height:100%}
-.hero-slide{min-width:100%;display:grid;grid-template-columns:1fr 1fr;padding:6rem 5% 3rem;gap:3rem;max-width:1300px;margin:0 auto;align-items:center;box-sizing:border-box}
+.hero-slide{min-width:100%;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:auto;padding:6rem 5% 3rem;gap:3rem;max-width:1300px;margin:0 auto;align-items:center;box-sizing:border-box}
+.hero-slide .hero-actions{grid-column:auto}
 .hero-slide-img{width:100%;aspect-ratio:4/5;overflow:hidden;object-fit:cover;display:block}
 .hero-nav{position:absolute;bottom:.75rem;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:1rem;z-index:10}
 .hero-dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.3);border:none;cursor:pointer;padding:0;transition:background .2s;margin:0 4px}
@@ -139,7 +140,9 @@ nav{
     color:rgba(240,235,227,0.7);
   }
   .hero-slide .hero-actions{
+    grid-column:1/-1;
     justify-content:center;
+    margin-top:.5rem;
   }
   .hero-slide .hero-tag{display:none}
   .hero-slide-img{
