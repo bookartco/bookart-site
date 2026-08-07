@@ -96,36 +96,58 @@ fbq('track', 'PageView');
   </ul>
 </div>
 
-<!-- HERO -->
+<!-- HERO BANNER -->
 <section class="hero-section">
-  <div class="hero">
-    <div class="hero-text">
-      <span class="hero-tag reveal">Pre-marked · No experience needed</span>
-      <h1 class="hero-title reveal">
-        Fold a book into a <em>3D sculpture</em> with your own hands.
-      </h1>
-      <p class="hero-sub reveal">
-        Every page has printed guides that show you exactly where to fold. No measuring. No cutting. No experience needed. Just follow the marks and watch something beautiful emerge.
-      </p>
-      <div class="hero-actions reveal">
-        <a href="https://www.amazon.com/stores/Diego-E.-Valencia-S/author/B0BN4KYQNH" target="_blank" class="btn-primary" onclick="gtag('event', 'click_amazon', {item: 'Hero CTA'});fbq('trackCustom', 'click_amazon_product', {item: 'Hero CTA'})">
-  Shop on Amazon ↗
-</a>
-      </div>
-    </div>
+  <div style="overflow:hidden">
+  <div class="hero-slides" id="heroSlides">
 
-    <div class="hero-visual reveal">
-      <div class="hero-img">
-        <img src="images/hero-butterfly-color.webp" alt="BookArt Butterfly 3D sculpture" fetchpriority="high">
-      </div>
-      <div class="hero-float">
-        <div class="float-dot">✦</div>
-        <div class="float-txt">
-          <span>Open the book · Follow the marks</span>
-          <strong>Create your 3D sculpture</strong>
+    <!-- SLIDE 1 — Hero principal -->
+    <div class="hero-slide">
+      <div class="hero-text">
+        <span class="hero-tag">Pre-marked · No experience needed</span>
+        <h1 class="hero-title">Fold a book into a <em>3D sculpture</em> with your own hands.</h1>
+        <p class="hero-sub">Every page has printed guides that show you exactly where to fold. No measuring. No cutting. Just follow the marks.</p>
+        <div class="hero-actions">
+          <a href="https://www.amazon.com/stores/Diego-E.-Valencia-S/author/B0BN4KYQNH" target="_blank" class="btn-primary" onclick="gtag('event', 'click_amazon', {item: 'Hero CTA'});fbq('trackCustom', 'click_amazon_product', {item: 'Hero CTA'})">Shop on Amazon ↗</a>
         </div>
       </div>
+      <img src="images/hero-butterfly-color.webp" alt="BookArt Butterfly 3D sculpture" class="hero-slide-img" fetchpriority="high">
     </div>
+
+    <!-- SLIDE 2 — Lanzamiento Gladiador -->
+    <div class="hero-slide">
+      <div class="hero-text">
+        <span class="hero-tag">New launch · Limited design</span>
+        <h2 class="hero-title">The <em>Gladiator</em> has arrived.</h2>
+        <p class="hero-sub">Like Odysseus before the gates of Troy — fold it page by page and watch a legend emerge from the paper.</p>
+        <div class="hero-actions">
+          <a href="https://www.amazon.com/stores/Diego-E.-Valencia-S/author/B0BN4KYQNH" target="_blank" class="btn-primary" onclick="gtag('event', 'click_amazon', {item: 'Hero Gladiator'});fbq('trackCustom', 'click_amazon_product', {item: 'Hero Gladiator'})">Get yours on Amazon ↗</a>
+        </div>
+      </div>
+      <img src="images/banner-gladiador.jpg" alt="BookArt Gladiator 3D sculpture" class="hero-slide-img">
+    </div>
+
+    <!-- SLIDE 3 — Campaña guitarra -->
+    <div class="hero-slide">
+      <div class="hero-text">
+        <span class="hero-tag">Design of the week · For music lovers</span>
+        <h2 class="hero-title">A gift for those who <em>feel</em> the music.</h2>
+        <p class="hero-sub">Fold a guitar, page by page. The perfect handmade gift for anyone whose life has a soundtrack.</p>
+        <div class="hero-actions">
+          <a href="https://www.amazon.com/stores/Diego-E.-Valencia-S/author/B0BN4KYQNH" target="_blank" class="btn-primary" onclick="gtag('event', 'click_amazon', {item: 'Hero Guitar'});fbq('trackCustom', 'click_amazon_product', {item: 'Hero Guitar'})">Shop on Amazon ↗</a>
+        </div>
+      </div>
+      <img src="images/banner-guitarra.jpg" alt="BookArt Guitar 3D sculpture" class="hero-slide-img">
+    </div>
+
+  </div>
+  </div>
+
+  <!-- Navegación -->
+  <div class="hero-nav">
+    <button class="hero-arrow" onclick="moveHero(-1)">←</button>
+    <div id="heroDots"></div>
+    <button class="hero-arrow" onclick="moveHero(1)">→</button>
   </div>
 </section>
   
@@ -622,6 +644,34 @@ const observer = new IntersectionObserver(entries => {
 }, {threshold: 0.1});
 reveals.forEach(r => observer.observe(r));
 
+// Hero Banner
+const heroSlides = document.getElementById('heroSlides');
+const heroDots = document.getElementById('heroDots');
+const heroTotal = heroSlides ? heroSlides.children.length : 0;
+let heroCurrent = 0;
+
+if(heroTotal > 0){
+  for(let i = 0; i < heroTotal; i++){
+    const dot = document.createElement('button');
+    dot.className = 'hero-dot' + (i === 0 ? ' active' : '');
+    dot.onclick = () => goToHero(i);
+    heroDots.appendChild(dot);
+  }
+}
+
+function goToHero(n){
+  heroCurrent = n;
+  heroSlides.style.transform = `translateX(-${n * 100}%)`;
+  document.querySelectorAll('.hero-dot').forEach((d,i) => d.classList.toggle('active', i === n));
+}
+
+function moveHero(dir){
+  goToHero((heroCurrent + dir + heroTotal) % heroTotal);
+}
+
+// Auto-advance cada 6 segundos
+setInterval(() => moveHero(1), 6000);
+  
 // Creator Form
 async function submitCreator() {
   const nombre = document.getElementById('nombre').value.trim();
