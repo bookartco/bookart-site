@@ -328,6 +328,20 @@ footer p{font-size:.75rem;color:rgba(255,255,255,.3)}
 .article-body h2{font-size:clamp(1.5rem,3vw,2.2rem);font-weight:500;line-height:1.2;margin:3rem 0 1rem;color:var(--ink)}
 .article-body h3{font-size:1.3rem;font-weight:500;margin:2rem 0 .75rem;color:var(--ink)}
 .highlight{border-left:2px solid var(--teal);padding:1.25rem 1.5rem;margin:2.5rem 0;background:var(--teal-light);font-style:italic;font-size:1.1rem;line-height:1.55;color:var(--ink)}
+.article-shot{display:block;margin:2rem 0;position:relative;line-height:0}
+.article-shot img{width:100%;display:block;transition:transform .4s ease,box-shadow .3s ease}
+.article-shot::after{
+  content:attr(data-label);position:absolute;right:14px;bottom:14px;
+  background:var(--teal);color:#fff;
+  font-size:.66rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;
+  padding:.45rem .85rem;opacity:0;transform:translateY(6px);
+  transition:opacity .25s ease,transform .25s ease;pointer-events:none;
+}
+.article-shot:hover img{transform:scale(1.015);box-shadow:0 10px 36px rgba(0,0,0,.16)}
+.article-shot:hover::after{opacity:1;transform:none}
+@media(hover:none){
+  .article-shot::after{opacity:1;transform:none}
+}
 .article-cta{margin:3.5rem 0;background:var(--ink);padding:2.5rem;text-align:center}
 .article-cta p{color:rgba(255,255,255,.65);font-size:.9rem;margin-bottom:1.25rem;line-height:1.6}
 .article-cta strong{display:block;font-size:1.6rem;font-weight:500;color:#fff;margin-bottom:.5rem}
